@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://djco7s81fjuvv"]
+
+[ext_resource type="Texture2D" uid="uid://lkyvyuc3mot0" path="res://assets/tileset.png" id="1_k52ih"]
+[ext_resource type="PackedScene" uid="uid://80cdwlwlkwhp" path="res://src/Actors/player.tscn" id="2_8f0pn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cosnx"]
+texture = ExtResource("1_k52ih")
+0:10/size_in_atlas = Vector2i(10, 5)
+0:10/0 = 0
+0:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:10/0/physics_layer_0/angular_velocity = 0.0
+0:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-79, 39, 79, -40, 79, 39)
+0:5/size_in_atlas = Vector2i(5, 5)
+0:5/0 = 0
+0:5/0/texture_origin = Vector2i(1, 1)
+0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(40.3051, 38.8909, 39.598, -43.1335, -23.3345, 38.1838)
+0:0/size_in_atlas = Vector2i(5, 5)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.875, 39.5, -39.875, -41, 39.375, -40.25, 39.375, 39.75)
+
+[sub_resource type="TileSet" id="TileSet_yghgo"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
+sources/4 = SubResource("TileSetAtlasSource_cosnx")
+
+[node name="LevelTemplate" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_yghgo")
+format = 2
+layer_0/tile_data = PackedInt32Array(131074, 4, 0, 458754, 4, 0, 786434, 4, 0, 1114114, 4, 0, 1441794, 4, 0, 1769474, 4, 0, 2097154, 4, 0, 2424834, 4, 0, 2424839, 4, 0, 2424844, 4, 0, 2424849, 4, 0, 2424854, 4, 0, 2424859, 4, 0, 2424864, 4, 0, 2424869, 4, 0, 2424874, 4, 0, 2424879, 4, 0, 2424884, 4, 0, 2424889, 4, 0, 2424894, 4, 0, 2424899, 4, 0, 2097219, 4, 0, 1769539, 4, 0, 1441859, 4, 0, 1114179, 4, 0, 786499, 4, 0, 458819, 4, 0, 131139, 4, 0, 1638429, 4, 0, 1638434, 4, 0, 2097200, 4, 0, 917511, 4, 0, 2097172, 4, 5)
+
+[node name="Player" parent="." instance=ExtResource("2_8f0pn")]
+position = Vector2(278.655, 237.992)
+collision_layer = 2
